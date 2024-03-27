@@ -7,14 +7,21 @@ import com.myproperty.propertymanagement.repository.PropertyRepository;
 import com.myproperty.propertymanagement.service.PropertyService;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+
+
+
 @Service
 public class PropertyServiceImpl implements PropertyService {
+
+    @Value("${pms.message}")
+    private  String dummy;
     @Autowired
     private PropertyRepository propertyRepository;
 
@@ -37,6 +44,7 @@ public class PropertyServiceImpl implements PropertyService {
     public List<PropertyDTO> getAllProperties() {
         List<PropertyEntity> propertyEntityList= (List<PropertyEntity>) propertyRepository.findAll();
         List<PropertyDTO> propertyDTOS=new ArrayList<>();
+        System.out.println("This message is from properties file:"+dummy);
         for(PropertyEntity pe:propertyEntityList){
             PropertyDTO propertyDTO=propertyConverter.convertEntitytoDTO(pe);
             propertyDTOS.add(propertyDTO);
