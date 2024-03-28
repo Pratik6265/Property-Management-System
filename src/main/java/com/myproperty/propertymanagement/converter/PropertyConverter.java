@@ -5,7 +5,6 @@ import com.myproperty.propertymanagement.dto.PropertyDTO;
 import com.myproperty.propertymanagement.entity.PropertyEntity;
 import org.springframework.stereotype.Component;
 
-import javax.sound.sampled.Port;
 
 @Component
 public class PropertyConverter {
@@ -17,8 +16,6 @@ public class PropertyConverter {
         pe.setDescription(propertyDTO.getDescription());
         pe.setTitle(propertyDTO.getTitle());
         pe.setAddress(propertyDTO.getAddress());
-        pe.setOwnerEmail(propertyDTO.getOwnerEmail());
-        pe.setOwnerName(propertyDTO.getOwnerName());
         pe.setPrice(propertyDTO.getPrice());
 
         return pe;
@@ -30,8 +27,6 @@ public class PropertyConverter {
         propertyDTO.setDescription(propertyEntity.getDescription());
         propertyDTO.setTitle(propertyEntity.getTitle());
         propertyDTO.setAddress(propertyEntity.getAddress());
-        propertyDTO.setOwnerEmail(propertyEntity.getOwnerEmail());
-        propertyDTO.setOwnerName(propertyEntity.getOwnerName());
         propertyDTO.setPrice(propertyEntity.getPrice());
         return propertyDTO;
     }
