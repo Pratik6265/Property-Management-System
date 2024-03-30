@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class PropertyConverter {
-    public PropertyEntity convertDTOtoEntity(PropertyDTO propertyDTO){
-        PropertyEntity pe=new PropertyEntity();
+    public PropertyEntity convertDTOtoEntity(PropertyDTO propertyDTO) {
+        PropertyEntity pe = new PropertyEntity();
         //this is Adapter design pattern in which we change the layers
 
 
@@ -21,8 +21,8 @@ public class PropertyConverter {
         return pe;
     }
 
-    public PropertyDTO convertEntitytoDTO(PropertyEntity propertyEntity){
-        PropertyDTO propertyDTO=new PropertyDTO();
+    public PropertyDTO convertEntitytoDTO(PropertyEntity propertyEntity) {
+        PropertyDTO propertyDTO = new PropertyDTO();
         propertyDTO.setId(propertyEntity.getId());
         propertyDTO.setDescription(propertyEntity.getDescription());
         propertyDTO.setTitle(propertyEntity.getTitle());
