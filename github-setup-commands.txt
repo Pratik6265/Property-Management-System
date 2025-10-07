@@ -1,0 +1,16 @@
+this is for First time
+1 git init
+2 git add .
+3 git commit -m "any message"
+4 git remote add origin //here our project url
+5 git remote set -url origin https://user_name:token@github.com/user_name/project_name.git
+6 git push --set-upstream origin master
+
+Next time do this ----------------
+=======
+
+1 git pull
+2 git add .
+3 git commit -m "any message"
+4 git push
+
